@@ -1,0 +1,674 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ValidatorAction (Apache Commons Validator 1.5.0 API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ValidatorAction (Apache Commons Validator 1.5.0 API)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/ValidatorAction.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/commons/validator/Validator.html" title="class in org.apache.commons.validator"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/commons/validator/ValidatorException.html" title="class in org.apache.commons.validator"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/commons/validator/ValidatorAction.html" target="_top">Frames</a></li>
+<li><a href="ValidatorAction.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.commons.validator</div>
+<h2 title="Class ValidatorAction" class="title">Class ValidatorAction</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.commons.validator.ValidatorAction</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">ValidatorAction</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
+<div class="block">Contains the information to dynamically create and run a validation
+ method.  This is the class representation of a pluggable validator that can
+ be defined in an xml file with the &lt;validator&gt; element.
+
+ <strong>Note</strong>: The validation method is assumed to be thread safe.</div>
+<dl><dt><span class="strong">Version:</span></dt>
+  <dd>$Revision: 1713331 $</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../serialized-form.html#org.apache.commons.validator.ValidatorAction">Serialized Form</a></dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#ValidatorAction()">ValidatorAction</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#getClassname()">getClassname</a></strong>()</code>
+<div class="block">Gets the class of the validator action.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#getDependencyList()">getDependencyList</a></strong>()</code>
+<div class="block">Returns the dependent validator names as an unmodifiable
+ <code>List</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#getDepends()">getDepends</a></strong>()</code>
+<div class="block">Gets the dependencies of the validator action as a comma separated list
+ of validator names.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#getJavascript()">getJavascript</a></strong>()</code>
+<div class="block">Gets the Javascript equivalent of the java class and method
+ associated with this action.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#getJsFunctionName()">getJsFunctionName</a></strong>()</code>
+<div class="block">Gets the Javascript function name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#getMethod()">getMethod</a></strong>()</code>
+<div class="block">Gets the name of method being called for the validator action.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#getMethodParams()">getMethodParams</a></strong>()</code>
+<div class="block">Gets the method parameters for the method.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#getMsg()">getMsg</a></strong>()</code>
+<div class="block">Gets the message associated with the validator action.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#getName()">getName</a></strong>()</code>
+<div class="block">Gets the name of the validator action.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#init()">init</a></strong>()</code>
+<div class="block">Initialize based on set.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#isDependency(java.lang.String)">isDependency</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;validatorName)</code>
+<div class="block">Checks whether or not the value passed in is in the depends field.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#loadJavascriptFunction()">loadJavascriptFunction</a></strong>()</code>
+<div class="block">Load the javascript function specified by the given path.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#setClassname(java.lang.String)">setClassname</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;classname)</code>
+<div class="block">Sets the class of the validator action.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#setDepends(java.lang.String)">setDepends</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;depends)</code>
+<div class="block">Sets the dependencies of the validator action.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#setJavascript(java.lang.String)">setJavascript</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;javascript)</code>
+<div class="block">Sets the Javascript equivalent of the java class and method
+ associated with this action.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#setJsFunction(java.lang.String)">setJsFunction</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;jsFunction)</code>
+<div class="block">Sets the fully qualified class path of the Javascript function.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#setJsFunctionName(java.lang.String)">setJsFunctionName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;jsFunctionName)</code>
+<div class="block">Sets the Javascript function name.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#setMethod(java.lang.String)">setMethod</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;method)</code>
+<div class="block">Sets the name of method being called for the validator action.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#setMethodParams(java.lang.String)">setMethodParams</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;methodParams)</code>
+<div class="block">Sets the method parameters for the method.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#setMsg(java.lang.String)">setMsg</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;msg)</code>
+<div class="block">Sets the message associated with the validator action.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#setName(java.lang.String)">setName</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>
+<div class="block">Sets the name of the validator action.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/validator/ValidatorAction.html#toString()">toString</a></strong>()</code>
+<div class="block">Returns a string representation of the object.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ValidatorAction()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ValidatorAction</h4>
+<pre>public&nbsp;ValidatorAction()</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
+<div class="block">Gets the name of the validator action.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Validator Action name.</dd></dl>
+</li>
+</ul>
+<a name="setName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setName</h4>
+<pre>public&nbsp;void&nbsp;setName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<div class="block">Sets the name of the validator action.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - Validator Action name.</dd></dl>
+</li>
+</ul>
+<a name="getClassname()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getClassname</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getClassname()</pre>
+<div class="block">Gets the class of the validator action.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Class name of the validator Action.</dd></dl>
+</li>
+</ul>
+<a name="setClassname(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setClassname</h4>
+<pre>public&nbsp;void&nbsp;setClassname(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;classname)</pre>
+<div class="block">Sets the class of the validator action.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>classname</code> - Class name of the validator Action.</dd></dl>
+</li>
+</ul>
+<a name="getMethod()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMethod</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getMethod()</pre>
+<div class="block">Gets the name of method being called for the validator action.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The method name.</dd></dl>
+</li>
+</ul>
+<a name="setMethod(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMethod</h4>
+<pre>public&nbsp;void&nbsp;setMethod(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;method)</pre>
+<div class="block">Sets the name of method being called for the validator action.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>method</code> - The method name.</dd></dl>
+</li>
+</ul>
+<a name="getMethodParams()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMethodParams</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getMethodParams()</pre>
+<div class="block">Gets the method parameters for the method.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Method's parameters.</dd></dl>
+</li>
+</ul>
+<a name="setMethodParams(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMethodParams</h4>
+<pre>public&nbsp;void&nbsp;setMethodParams(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;methodParams)</pre>
+<div class="block">Sets the method parameters for the method.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>methodParams</code> - A comma separated list of parameters.</dd></dl>
+</li>
+</ul>
+<a name="getDepends()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDepends</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDepends()</pre>
+<div class="block">Gets the dependencies of the validator action as a comma separated list
+ of validator names.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The validator action's dependencies.</dd></dl>
+</li>
+</ul>
+<a name="setDepends(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDepends</h4>
+<pre>public&nbsp;void&nbsp;setDepends(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;depends)</pre>
+<div class="block">Sets the dependencies of the validator action.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>depends</code> - A comma separated list of validator names.</dd></dl>
+</li>
+</ul>
+<a name="getMsg()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMsg</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getMsg()</pre>
+<div class="block">Gets the message associated with the validator action.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The message for the validator action.</dd></dl>
+</li>
+</ul>
+<a name="setMsg(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMsg</h4>
+<pre>public&nbsp;void&nbsp;setMsg(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;msg)</pre>
+<div class="block">Sets the message associated with the validator action.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>msg</code> - The message for the validator action.</dd></dl>
+</li>
+</ul>
+<a name="getJsFunctionName()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getJsFunctionName</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getJsFunctionName()</pre>
+<div class="block">Gets the Javascript function name.  This is optional and can
+ be used instead of validator action name for the name of the
+ Javascript function/object.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The Javascript function name.</dd></dl>
+</li>
+</ul>
+<a name="setJsFunctionName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setJsFunctionName</h4>
+<pre>public&nbsp;void&nbsp;setJsFunctionName(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;jsFunctionName)</pre>
+<div class="block">Sets the Javascript function name.  This is optional and can
+ be used instead of validator action name for the name of the
+ Javascript function/object.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>jsFunctionName</code> - The Javascript function name.</dd></dl>
+</li>
+</ul>
+<a name="setJsFunction(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setJsFunction</h4>
+<pre>public&nbsp;void&nbsp;setJsFunction(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;jsFunction)</pre>
+<div class="block">Sets the fully qualified class path of the Javascript function.
+ <p>
+ This is optional and can be used <strong>instead</strong> of the setJavascript().
+ Attempting to call both <code>setJsFunction</code> and <code>setJavascript</code>
+ will result in an <code>IllegalStateException</code> being thrown. </p>
+ <p>
+ If <strong>neither</strong> setJsFunction or setJavascript is set then
+ validator will attempt to load the default javascript definition.
+ </p>
+ <pre>
+ <b>Examples</b>
+   If in the validator.xml :
+ #1:
+      &lt;validator name="tire"
+            jsFunction="com.yourcompany.project.tireFuncion"&gt;
+     Validator will attempt to load com.yourcompany.project.validateTireFunction.js from
+     its class path.
+ #2:
+    &lt;validator name="tire"&gt;
+      Validator will use the name attribute to try and load
+         org.apache.commons.validator.javascript.validateTire.js
+      which is the default javascript definition.
+ </pre></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>jsFunction</code> - The Javascript function's fully qualified class path.</dd></dl>
+</li>
+</ul>
+<a name="getJavascript()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getJavascript</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getJavascript()</pre>
+<div class="block">Gets the Javascript equivalent of the java class and method
+ associated with this action.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The Javascript validation.</dd></dl>
+</li>
+</ul>
+<a name="setJavascript(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setJavascript</h4>
+<pre>public&nbsp;void&nbsp;setJavascript(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;javascript)</pre>
+<div class="block">Sets the Javascript equivalent of the java class and method
+ associated with this action.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>javascript</code> - The Javascript validation.</dd></dl>
+</li>
+</ul>
+<a name="init()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>protected&nbsp;void&nbsp;init()</pre>
+<div class="block">Initialize based on set.</div>
+</li>
+</ul>
+<a name="loadJavascriptFunction()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>loadJavascriptFunction</h4>
+<pre>protected&nbsp;void&nbsp;loadJavascriptFunction()</pre>
+<div class="block">Load the javascript function specified by the given path.  For this
+ implementation, the <code>jsFunction</code> property should contain a
+ fully qualified package and script name, separated by periods, to be
+ loaded from the class loader that created this instance.
+
+ TODO if the path begins with a '/' the path will be intepreted as
+ absolute, and remain unchanged.  If this fails then it will attempt to
+ treat the path as a file path.  It is assumed the script ends with a
+ '.js'.</div>
+</li>
+</ul>
+<a name="isDependency(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isDependency</h4>
+<pre>public&nbsp;boolean&nbsp;isDependency(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;validatorName)</pre>
+<div class="block">Checks whether or not the value passed in is in the depends field.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>validatorName</code> - Name of the dependency to check.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Whether the named validator is a dependant.</dd></dl>
+</li>
+</ul>
+<a name="getDependencyList()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDependencyList</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getDependencyList()</pre>
+<div class="block">Returns the dependent validator names as an unmodifiable
+ <code>List</code>.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>List of the validator action's depedents.</dd></dl>
+</li>
+</ul>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<div class="block">Returns a string representation of the object.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a string representation.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/ValidatorAction.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../org/apache/commons/validator/Validator.html" title="class in org.apache.commons.validator"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../org/apache/commons/validator/ValidatorException.html" title="class in org.apache.commons.validator"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?org/apache/commons/validator/ValidatorAction.html" target="_top">Frames</a></li>
+<li><a href="ValidatorAction.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2002&#x2013;2015 <a href="http://www.apache.org/">The Apache Software Foundation</a>. All rights reserved.</small></p>
+</body>
+</html>

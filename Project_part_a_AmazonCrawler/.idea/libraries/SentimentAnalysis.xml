@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SentimentAnalysis">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/classes/artifacts/SentimentAnalysis_jar/SentimentAnalysis.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,731 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>DateValidator (Apache Commons Validator 1.5.0 API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="DateValidator (Apache Commons Validator 1.5.0 API)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/DateValidator.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/commons/validator/routines/CurrencyValidator.html" title="class in org.apache.commons.validator.routines"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/commons/validator/routines/DomainValidator.html" title="class in org.apache.commons.validator.routines"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/commons/validator/routines/DateValidator.html" target="_top">Frames</a></li>
+<li><a href="DateValidator.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">org.apache.commons.validator.routines</div>
+<h2 title="Class DateValidator" class="title">Class DateValidator</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html" title="class in org.apache.commons.validator.routines">org.apache.commons.validator.routines.AbstractFormatValidator</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html" title="class in org.apache.commons.validator.routines">org.apache.commons.validator.routines.AbstractCalendarValidator</a></li>
+<li>
+<ul class="inheritance">
+<li>org.apache.commons.validator.routines.DateValidator</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">DateValidator</span>
+extends <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html" title="class in org.apache.commons.validator.routines">AbstractCalendarValidator</a></pre>
+<div class="block"><p><b>Date Validation</b> and Conversion routines (<code>java.util.Date</code>).</p>
+
+ <p>This validator provides a number of methods for validating/converting
+    a <code>String</code> date value to a <code>java.util.Date</code> using
+    <code>java.text.DateFormat</code> to parse either:</p>
+    <ul>
+       <li>using the default format for the default <code>Locale</code></li>
+       <li>using a specified pattern with the default <code>Locale</code></li>
+       <li>using the default format for a specified <code>Locale</code></li>
+       <li>using a specified pattern with a specified <code>Locale</code></li>
+    </ul>
+
+ <p>For each of the above mechanisms, conversion method (i.e the
+    <code>validate</code> methods) implementations are provided which
+    either use the default <code>TimeZone</code> or allow the
+    <code>TimeZone</code> to be specified.</p>
+
+ <p>Use one of the <code>isValid()</code> methods to just validate or
+    one of the <code>validate()</code> methods to validate and receive a
+    <i>converted</i> <code>Date</code> value.</p>
+
+ <p>Implementations of the <code>validate()</code> method are provided
+    to create <code>Date</code> objects for different <i>time zones</i>
+    if the system default is not appropriate.</p>
+
+ <p>Once a value has been successfully converted the following
+    methods can be used to perform various date comparison checks:</p>
+    <ul>
+       <li><code>compareDates()</code> compares the day, month and
+           year of two dates, returning 0, -1 or +1 indicating
+           whether the first date is equal, before or after the second.</li>
+       <li><code>compareWeeks()</code> compares the week and
+           year of two dates, returning 0, -1 or +1 indicating
+           whether the first week is equal, before or after the second.</li>
+       <li><code>compareMonths()</code> compares the month and
+           year of two dates, returning 0, -1 or +1 indicating
+           whether the first month is equal, before or after the second.</li>
+       <li><code>compareQuarters()</code> compares the quarter and
+           year of two dates, returning 0, -1 or +1 indicating
+           whether the first quarter is equal, before or after the second.</li>
+       <li><code>compareYears()</code> compares the
+           year of two dates, returning 0, -1 or +1 indicating
+           whether the first year is equal, before or after the second.</li>
+    </ul>
+
+ <p>So that the same mechanism used for parsing an <i>input</i> value
+    for validation can be used to format <i>output</i>, corresponding
+    <code>format()</code> methods are also provided. That is you can
+    format either:</p>
+    <ul>
+       <li>using a specified pattern</li>
+       <li>using the format for a specified <code>Locale</code></li>
+       <li>using the format for the <i>default</i> <code>Locale</code></li>
+    </ul></div>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>Validator 1.3.0</dd>
+<dt><span class="strong">Version:</span></dt>
+  <dd>$Revision: 1649191 $</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../serialized-form.html#org.apache.commons.validator.routines.DateValidator">Serialized Form</a></dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#DateValidator()">DateValidator</a></strong>()</code>
+<div class="block">Construct a <i>strict</i> instance with <i>short</i>
+ date style.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#DateValidator(boolean,%20int)">DateValidator</a></strong>(boolean&nbsp;strict,
+             int&nbsp;dateStyle)</code>
+<div class="block">Construct an instance with the specified <i>strict</i>
+ and <i>date style</i> parameters.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#compareDates(java.util.Date,%20java.util.Date,%20java.util.TimeZone)">compareDates</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</code>
+<div class="block">Compare Dates (day, month and year - not time).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#compareMonths(java.util.Date,%20java.util.Date,%20java.util.TimeZone)">compareMonths</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+             <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</code>
+<div class="block">Compare Months (month and year).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#compareQuarters(java.util.Date,%20java.util.Date,%20java.util.TimeZone)">compareQuarters</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</code>
+<div class="block">Compare Quarters (quarter and year).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#compareQuarters(java.util.Date,%20java.util.Date,%20java.util.TimeZone,%20int)">compareQuarters</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone,
+               int&nbsp;monthOfFirstQuarter)</code>
+<div class="block">Compare Quarters (quarter and year).</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#compareWeeks(java.util.Date,%20java.util.Date,%20java.util.TimeZone)">compareWeeks</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</code>
+<div class="block">Compare Weeks (week and year).</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#compareYears(java.util.Date,%20java.util.Date,%20java.util.TimeZone)">compareYears</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</code>
+<div class="block">Compare Years.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../org/apache/commons/validator/routines/DateValidator.html" title="class in org.apache.commons.validator.routines">DateValidator</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#getInstance()">getInstance</a></strong>()</code>
+<div class="block">Return a singleton instance of this validator.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#processParsedValue(java.lang.Object,%20java.text.Format)">processParsedValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/text/Format.html?is-external=true" title="class or interface in java.text">Format</a>&nbsp;formatter)</code>
+<div class="block">Returns the parsed <code>Date</code> unchanged.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#validate(java.lang.String)">validate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
+<div class="block">Validate/convert a <code>Date</code> using the default
+    <code>Locale</code> and <code>TimeZone</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#validate(java.lang.String,%20java.util.Locale)">validate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;locale)</code>
+<div class="block">Validate/convert a <code>Date</code> using the specified
+    <code>Locale</code> and default <code>TimeZone</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#validate(java.lang.String,%20java.util.Locale,%20java.util.TimeZone)">validate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;locale,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</code>
+<div class="block">Validate/convert a <code>Date</code> using the specified
+    <code>Locale</code> and <code>TimeZone</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#validate(java.lang.String,%20java.lang.String)">validate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern)</code>
+<div class="block">Validate/convert a <code>Date</code> using the specified
+    <i>pattern</i> and default <code>TimeZone</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#validate(java.lang.String,%20java.lang.String,%20java.util.Locale)">validate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;locale)</code>
+<div class="block">Validate/convert a <code>Date</code> using the specified pattern
+    and <code>Locale</code> and the default <code>TimeZone</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#validate(java.lang.String,%20java.lang.String,%20java.util.Locale,%20java.util.TimeZone)">validate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;locale,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</code>
+<div class="block">Validate/convert a <code>Date</code> using the specified
+    pattern, and <code>Locale</code> and <code>TimeZone</code>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#validate(java.lang.String,%20java.lang.String,%20java.util.TimeZone)">validate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</code>
+<div class="block">Validate/convert a <code>Date</code> using the specified
+    <i>pattern</i> and <code>TimeZone</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/validator/routines/DateValidator.html#validate(java.lang.String,%20java.util.TimeZone)">validate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</code>
+<div class="block">Validate/convert a <code>Date</code> using the specified
+    <code>TimeZone</code> and default <code>Locale</code>.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.commons.validator.routines.AbstractCalendarValidator">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.commons.validator.routines.<a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html" title="class in org.apache.commons.validator.routines">AbstractCalendarValidator</a></h3>
+<code><a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#compare(java.util.Calendar,%20java.util.Calendar,%20int)">compare</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#compareQuarters(java.util.Calendar,%20java.util.Calendar,%20int)">compareQuarters</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#compareTime(java.util.Calendar,%20java.util.Calendar,%20int)">compareTime</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#format(java.lang.Object,%20java.text.Format)">format</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#format(java.lang.Object,%20java.util.Locale,%20java.util.TimeZone)">format</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#format(java.lang.Object,%20java.lang.String,%20java.util.Locale)">format</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#format(java.lang.Object,%20java.lang.String,%20java.util.Locale,%20java.util.TimeZone)">format</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#format(java.lang.Object,%20java.lang.String,%20java.util.TimeZone)">format</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#format(java.lang.Object,%20java.util.TimeZone)">format</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#getFormat(java.util.Locale)">getFormat</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#getFormat(java.lang.String,%20java.util.Locale)">getFormat</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#isValid(java.lang.String,%20java.lang.String,%20java.util.Locale)">isValid</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#parse(java.lang.String,%20java.lang.String,%20java.util.Locale,%20java.util.TimeZone)">parse</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_org.apache.commons.validator.routines.AbstractFormatValidator">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;org.apache.commons.validator.routines.<a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html" title="class in org.apache.commons.validator.routines">AbstractFormatValidator</a></h3>
+<code><a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html#format(java.lang.Object)">format</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html#format(java.lang.Object,%20java.util.Locale)">format</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html#format(java.lang.Object,%20java.lang.String)">format</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html#isStrict()">isStrict</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html#isValid(java.lang.String)">isValid</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html#isValid(java.lang.String,%20java.util.Locale)">isValid</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html#isValid(java.lang.String,%20java.lang.String)">isValid</a>, <a href="../../../../../org/apache/commons/validator/routines/AbstractFormatValidator.html#parse(java.lang.String,%20java.text.Format)">parse</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="DateValidator()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>DateValidator</h4>
+<pre>public&nbsp;DateValidator()</pre>
+<div class="block">Construct a <i>strict</i> instance with <i>short</i>
+ date style.</div>
+</li>
+</ul>
+<a name="DateValidator(boolean, int)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DateValidator</h4>
+<pre>public&nbsp;DateValidator(boolean&nbsp;strict,
+             int&nbsp;dateStyle)</pre>
+<div class="block">Construct an instance with the specified <i>strict</i>
+ and <i>date style</i> parameters.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>strict</code> - <code>true</code> if strict
+        <code>Format</code> parsing should be used.</dd><dd><code>dateStyle</code> - the date style to use for Locale validation.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getInstance()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInstance</h4>
+<pre>public static&nbsp;<a href="../../../../../org/apache/commons/validator/routines/DateValidator.html" title="class in org.apache.commons.validator.routines">DateValidator</a>&nbsp;getInstance()</pre>
+<div class="block">Return a singleton instance of this validator.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>A singleton instance of the DateValidator.</dd></dl>
+</li>
+</ul>
+<a name="validate(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>validate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;validate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<div class="block"><p>Validate/convert a <code>Date</code> using the default
+    <code>Locale</code> and <code>TimeZone</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The value validation is being performed on.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The parsed <code>Date</code> if valid or <code>null</code>
+  if invalid.</dd></dl>
+</li>
+</ul>
+<a name="validate(java.lang.String, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>validate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;validate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</pre>
+<div class="block"><p>Validate/convert a <code>Date</code> using the specified
+    <code>TimeZone</code> and default <code>Locale</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The value validation is being performed on.</dd><dd><code>timeZone</code> - The Time Zone used to parse the date, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The parsed <code>Date</code> if valid or <code>null</code> if invalid.</dd></dl>
+</li>
+</ul>
+<a name="validate(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>validate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;validate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern)</pre>
+<div class="block"><p>Validate/convert a <code>Date</code> using the specified
+    <i>pattern</i> and default <code>TimeZone</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The value validation is being performed on.</dd><dd><code>pattern</code> - The pattern used to validate the value against, or the
+        default for the <code>Locale</code> if <code>null</code>.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The parsed <code>Date</code> if valid or <code>null</code> if invalid.</dd></dl>
+</li>
+</ul>
+<a name="validate(java.lang.String, java.lang.String, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>validate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;validate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</pre>
+<div class="block"><p>Validate/convert a <code>Date</code> using the specified
+    <i>pattern</i> and <code>TimeZone</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The value validation is being performed on.</dd><dd><code>pattern</code> - The pattern used to validate the value against, or the
+        default for the <code>Locale</code> if <code>null</code>.</dd><dd><code>timeZone</code> - The Time Zone used to parse the date, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The parsed <code>Date</code> if valid or <code>null</code> if invalid.</dd></dl>
+</li>
+</ul>
+<a name="validate(java.lang.String, java.util.Locale)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>validate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;validate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;locale)</pre>
+<div class="block"><p>Validate/convert a <code>Date</code> using the specified
+    <code>Locale</code> and default <code>TimeZone</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The value validation is being performed on.</dd><dd><code>locale</code> - The locale to use for the date format, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The parsed <code>Date</code> if valid or <code>null</code> if invalid.</dd></dl>
+</li>
+</ul>
+<a name="validate(java.lang.String, java.util.Locale, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>validate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;validate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;locale,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</pre>
+<div class="block"><p>Validate/convert a <code>Date</code> using the specified
+    <code>Locale</code> and <code>TimeZone</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The value validation is being performed on.</dd><dd><code>locale</code> - The locale to use for the date format, system default if null.</dd><dd><code>timeZone</code> - The Time Zone used to parse the date, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The parsed <code>Date</code> if valid or <code>null</code> if invalid.</dd></dl>
+</li>
+</ul>
+<a name="validate(java.lang.String, java.lang.String, java.util.Locale)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>validate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;validate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;locale)</pre>
+<div class="block"><p>Validate/convert a <code>Date</code> using the specified pattern
+    and <code>Locale</code> and the default <code>TimeZone</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The value validation is being performed on.</dd><dd><code>pattern</code> - The pattern used to validate the value against, or the
+        default for the <code>Locale</code> if <code>null</code>.</dd><dd><code>locale</code> - The locale to use for the date format, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The parsed <code>Date</code> if valid or <code>null</code> if invalid.</dd></dl>
+</li>
+</ul>
+<a name="validate(java.lang.String, java.lang.String, java.util.Locale, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>validate</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;validate(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;pattern,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html?is-external=true" title="class or interface in java.util">Locale</a>&nbsp;locale,
+            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</pre>
+<div class="block"><p>Validate/convert a <code>Date</code> using the specified
+    pattern, and <code>Locale</code> and <code>TimeZone</code>.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The value validation is being performed on.</dd><dd><code>pattern</code> - The pattern used to validate the value against, or the
+        default for the <code>Locale</code> if <code>null</code>.</dd><dd><code>locale</code> - The locale to use for the date format, system default if null.</dd><dd><code>timeZone</code> - The Time Zone used to parse the date, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The parsed <code>Date</code> if valid or <code>null</code> if invalid.</dd></dl>
+</li>
+</ul>
+<a name="compareDates(java.util.Date, java.util.Date, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compareDates</h4>
+<pre>public&nbsp;int&nbsp;compareDates(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</pre>
+<div class="block"><p>Compare Dates (day, month and year - not time).</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The <code>Calendar</code> value to check.</dd><dd><code>compare</code> - The <code>Calendar</code> to compare the value to.</dd><dd><code>timeZone</code> - The Time Zone used to compare the dates, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Zero if the dates are equal, -1 if first
+ date is less than the seconds and +1 if the first
+ date is greater than.</dd></dl>
+</li>
+</ul>
+<a name="compareWeeks(java.util.Date, java.util.Date, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compareWeeks</h4>
+<pre>public&nbsp;int&nbsp;compareWeeks(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</pre>
+<div class="block"><p>Compare Weeks (week and year).</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The <code>Date</code> value to check.</dd><dd><code>compare</code> - The <code>Date</code> to compare the value to.</dd><dd><code>timeZone</code> - The Time Zone used to compare the dates, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Zero if the weeks are equal, -1 if first
+ parameter's week is less than the seconds and +1 if the first
+ parameter's week is greater than.</dd></dl>
+</li>
+</ul>
+<a name="compareMonths(java.util.Date, java.util.Date, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compareMonths</h4>
+<pre>public&nbsp;int&nbsp;compareMonths(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</pre>
+<div class="block"><p>Compare Months (month and year).</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The <code>Date</code> value to check.</dd><dd><code>compare</code> - The <code>Date</code> to compare the value to.</dd><dd><code>timeZone</code> - The Time Zone used to compare the dates, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Zero if the months are equal, -1 if first
+ parameter's month is less than the seconds and +1 if the first
+ parameter's month is greater than.</dd></dl>
+</li>
+</ul>
+<a name="compareQuarters(java.util.Date, java.util.Date, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compareQuarters</h4>
+<pre>public&nbsp;int&nbsp;compareQuarters(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</pre>
+<div class="block"><p>Compare Quarters (quarter and year).</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The <code>Date</code> value to check.</dd><dd><code>compare</code> - The <code>Date</code> to compare the value to.</dd><dd><code>timeZone</code> - The Time Zone used to compare the dates, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Zero if the months are equal, -1 if first
+ parameter's quarter is less than the seconds and +1 if the first
+ parameter's quarter is greater than.</dd></dl>
+</li>
+</ul>
+<a name="compareQuarters(java.util.Date, java.util.Date, java.util.TimeZone, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compareQuarters</h4>
+<pre>public&nbsp;int&nbsp;compareQuarters(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone,
+                  int&nbsp;monthOfFirstQuarter)</pre>
+<div class="block"><p>Compare Quarters (quarter and year).</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The <code>Date</code> value to check.</dd><dd><code>compare</code> - The <code>Date</code> to compare the value to.</dd><dd><code>timeZone</code> - The Time Zone used to compare the dates, system default if null.</dd><dd><code>monthOfFirstQuarter</code> - The  month that the first quarter starts.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Zero if the quarters are equal, -1 if first
+ parameter's quarter is less than the seconds and +1 if the first
+ parameter's quarter is greater than.</dd></dl>
+</li>
+</ul>
+<a name="compareYears(java.util.Date, java.util.Date, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>compareYears</h4>
+<pre>public&nbsp;int&nbsp;compareYears(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;value,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;compare,
+               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TimeZone.html?is-external=true" title="class or interface in java.util">TimeZone</a>&nbsp;timeZone)</pre>
+<div class="block"><p>Compare Years.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The <code>Date</code> value to check.</dd><dd><code>compare</code> - The <code>Date</code> to compare the value to.</dd><dd><code>timeZone</code> - The Time Zone used to compare the dates, system default if null.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Zero if the years are equal, -1 if first
+ parameter's year is less than the seconds and +1 if the first
+ parameter's year is greater than.</dd></dl>
+</li>
+</ul>
+<a name="processParsedValue(java.lang.Object, java.text.Format)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>processParsedValue</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;processParsedValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/text/Format.html?is-external=true" title="class or interface in java.text">Format</a>&nbsp;formatter)</pre>
+<div class="block"><p>Returns the parsed <code>Date</code> unchanged.</p></div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html#processParsedValue(java.lang.Object,%20java.text.Format)">processParsedValue</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/commons/validator/routines/AbstractCalendarValidator.html" title="class in org.apache.commons.validator.routines">AbstractCalendarValidator</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>value</code> - The parsed <code>Date</code> object created.</dd><dd><code>formatter</code> - The Format used to parse the value with.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The parsed value converted to a <code>Calendar</code>.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/DateValidator.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../org/apache/commons/validator/routines/CurrencyValidator.html" title="class in org.apache.commons.validator.routines"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../org/apache/commons/validator/routines/DomainValidator.html" title="class in org.apache.commons.validator.routines"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?org/apache/commons/validator/routines/DateValidator.html" target="_top">Frames</a></li>
+<li><a href="DateValidator.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2002&#x2013;2015 <a href="http://www.apache.org/">The Apache Software Foundation</a>. All rights reserved.</small></p>
+</body>
+</html>
